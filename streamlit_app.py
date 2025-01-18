@@ -131,11 +131,13 @@ beta = st.slider(
 
 import numpy as np
 data["N_p"] = data["N"]*np.exp((1013-data["P"])/beta)
-st.line_chart(
-    data,
-    x="time",
-    y="N_p",
-)
+#st.line_chart(
+#    data,
+#    x="time",
+#    y="N_p",
+#)
+
+st.plotly_chart(px.line(data, x="time" ,y=["N","N_p"]), use_container_width=True)
 
 """
 # import pandas as pd
