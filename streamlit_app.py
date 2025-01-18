@@ -107,10 +107,11 @@ st.write("gemacht!", Magazine.post("topic1"))
 Magazine.report("topic1", Figure.get())
 with Publish("report.pdf", "huhu") as M:
     M.add_topic("topic1")
+    M.add_figure("topic1")
 
 with open("report.pdf", "rb") as file:
     btn = st.download_button(
-        label="Download image",
+        label="Download Report",
         data=file,
         file_name="report.pdf",
         mime="application/pdf",
