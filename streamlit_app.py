@@ -131,7 +131,7 @@ beta = st.slider(
 
 st.line_chart(
     data,
-    x=col3,
+    x="time",
     y='N',
     color='C0',
 )
