@@ -78,15 +78,22 @@ But it's otherwise a great (and did I mention _free_?) source of data.
 ''
 ''
 
+@st.cache_data
+def convert_df(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode("utf-8")
+
 spectra = st.file_uploader("upload file", type={"csv", "txt"})
 if spectra is not None:
     spectra_df = pd.read_csv(spectra)
     st.write(spectra_df)
-    csv = spectra_df.to_csv("file.csv")
+
+    csv = convert_df(spectra_df)
+
     st.download_button(
         label="Download data as CSV",
         data=csv,
-        file_name="file.csv",
+        file_name="large_df.csv",
         mime="text/csv",
     )
 
