@@ -129,6 +129,8 @@ beta = st.slider(
     max_value=160,
     value=133)
 
+import numpy as np
+data["N_p"] = data["N"]*np.exp((1013-data["P"])/beta)
 st.line_chart(
     data,
     x="time",
