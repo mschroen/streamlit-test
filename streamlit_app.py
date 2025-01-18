@@ -134,7 +134,7 @@ data["N_p"] = data["N"]*np.exp((1013-data["P"])/beta)
 st.line_chart(
     data,
     x="time",
-    y="N",
+    y="N_p",
 )
 
 """
