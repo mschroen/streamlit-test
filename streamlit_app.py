@@ -136,7 +136,7 @@ data["N_p"] = data["N"]*np.exp((1013-data["P"])/beta)
 #    x="time",
 #    y="N_p",
 #)
-
+import plotly.express as px
 st.plotly_chart(px.line(data, x="time" ,y=["N","N_p"]), use_container_width=True)
 
 """
