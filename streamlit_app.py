@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import math
 from pathlib import Path
+import sklearn
 from figurex import Figure
 
 # Set the title and favicon that appear in the Browser's tab bar.
@@ -79,7 +80,7 @@ But it's otherwise a great (and did I mention _free_?) source of data.
 spectra = st.file_uploader("upload file", type={"csv", "txt"})
 if spectra is not None:
     spectra_df = pd.read_csv(spectra)
-st.write(spectra_df)
+    st.write(spectra_df)
 
 
 # Add some spacing
