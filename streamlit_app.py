@@ -103,7 +103,9 @@ st.pyplot(Figure.get())
 
 from magazine import Magazine, Publish
 Magazine.report("topic1", "hallo")
-st.write("gemacht!", Magazine.post("topic1"))
+st.write("gemacht!")
+st.write(Magazine.post("topic1"))
+Magazine.report("topic1", "heee")
 Magazine.report("topic1", Figure.get())
 with Publish("report.pdf", "huhu") as M:
     M.add_topic("topic1")
