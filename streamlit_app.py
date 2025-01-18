@@ -124,7 +124,7 @@ path = Path(__file__).parent/'data/test.csv'
 data = pd.read_csv(path)
 
 beta = st.slider(
-    'Which years are you interested in?',
+    'Beta',
     min_value=120,
     max_value=160,
     value=133)
@@ -132,8 +132,7 @@ beta = st.slider(
 st.line_chart(
     data,
     x="time",
-    y='N',
-    color='C0',
+    y="N",
 )
 
 """
