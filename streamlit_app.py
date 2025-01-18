@@ -108,6 +108,14 @@ Magazine.report("topic1", Figure.get())
 with Publish("report.pdf", "huhu") as M:
     M.add_topic("topic1")
 
+with open("report.pdf", "rb") as file:
+    btn = st.download_button(
+        label="Download image",
+        data=file,
+        file_name="report.pdf",
+        mime="application/pdf",
+    )
+
 """
 # import pandas as pd
 from pathlib import Path
