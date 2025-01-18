@@ -119,6 +119,23 @@ with open("report.pdf", "rb") as file:
         mime="application/pdf",
     )
 
+
+path = Path(__file__).parent/'data/test.csv'
+data = pd.read_csv(path)
+
+beta = st.slider(
+    'Which years are you interested in?',
+    min_value=120,
+    max_value=160,
+    value=133)
+
+st.line_chart(
+    data,
+    x=col3,
+    y='N',
+    color='C0',
+)
+
 """
 # import pandas as pd
 from pathlib import Path
