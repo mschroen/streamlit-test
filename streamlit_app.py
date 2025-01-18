@@ -87,6 +87,13 @@ with Figure() as ax:
     ax.plot([1,2,3], [4,5,6])
 st.pyplot(Figure.get())
 
+from magazine import Magazine, Publish
+Magazine.report("topic1", "hallo")
+Magazine.report("topic1", Figure.get())
+with Publish("report.pdf") as M:
+    M.add_topic("topic1")
+
+"""
 # import pandas as pd
 from pathlib import Path
 from neptoon.workflow.process_with_yaml import ProcessWithYaml
@@ -116,7 +123,7 @@ yaml_processor = ProcessWithYaml(configuration_object=config)
 
 ## OPTION 2:
 yaml_processor.run_full_process()
-
+"""
 
 # Add some spacing
 ''
