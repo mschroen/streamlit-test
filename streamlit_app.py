@@ -82,14 +82,14 @@ spectra = st.file_uploader("upload file", type={"csv", "txt"})
 if spectra is not None:
     spectra_df = pd.read_csv(spectra)
     st.write(spectra_df)
-    spectra_df.to_csv("file.csv")
+    csv = spectra_df.to_csv("file.csv")
     st.download_button(
         label="Download data as CSV",
-        data=spectra_df,
+        data=csv,
         file_name="file.csv",
         mime="text/csv",
     )
-    
+
 with Figure() as ax:
     ax.plot([1,2,3], [4,5,6])
 st.pyplot(Figure.get())
