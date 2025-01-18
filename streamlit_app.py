@@ -83,6 +83,9 @@ if spectra is not None:
     spectra_df = pd.read_csv(spectra)
     st.write(spectra_df)
 
+with Figure() as ax:
+    ax.plot([1,2,3], [4,5,6])
+st.pyplot(Figure.get())
 
 # Add some spacing
 ''
